@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
-    public void LoadGameScene() // Завантажує сцену гри
+    public void LoadGameScene()
     {
-        SceneManager.LoadScene(1); // За індексом 1
+        SceneManager.LoadScene(1);
     }
-    public void LoadMenuScene() // Завантажує сцену меню
+    public void LoadMenuScene()
     {
-        SceneManager.LoadScene(0); // За індексом 0
+        SceneManager.LoadScene(0);
     }
 }
