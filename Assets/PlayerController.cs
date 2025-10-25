@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public int currentLine = 0; // Поточна лінія
     public float posHorizontalStep = 2.25f; // Змінна позиції по горизонту
+
+    private Rigidbody rb;
+    private bool isGrounded;
+    public float jumpForce = 6f;
     private void Update()
     {
         // Якщо (Введення.ОтриматиКлавішу(КодКлавіші.ПраваСтрілка))
@@ -19,5 +24,21 @@ public class PlayerController : MonoBehaviour
             currentLine--; // -1 до змінної
             transform.Translate(Vector3.left * posHorizontalStep);
         }
+        if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+        }
+    }
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        isGrounded = true;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        isGrounded = false;
     }
 }

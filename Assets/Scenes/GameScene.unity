@@ -803,6 +803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLine: 0
   posHorizontalStep: 2.25
+  jumpForce: 10
 --- !u!54 &1344418969
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -825,7 +826,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112

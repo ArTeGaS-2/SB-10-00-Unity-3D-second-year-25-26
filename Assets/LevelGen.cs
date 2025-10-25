@@ -13,6 +13,8 @@ public class LevelGen : MonoBehaviour
     public float scenePartStep; // Крок від сегменту до іншого
     public float basePartPos; // Позиція базового фрагменту
     public int numOfParts; // Кількість фрагментів
+
+   
     private void Awake()
     {
         for (int i = 1; i <= numOfParts; i++)
@@ -33,4 +35,5 @@ public class LevelGen : MonoBehaviour
             }
         }
     }
+
 }
