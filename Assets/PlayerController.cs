@@ -15,12 +15,16 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // якщо (¬веденн€.ќтримати лав≥шу( од лав≥ш≥.ѕрава—тр≥лка))
-        if (Input.GetKeyDown(KeyCode.RightArrow) && currentLine < 1)
+        if (Input.GetKeyDown(KeyCode.RightArrow)
+            || Input.GetKeyDown(KeyCode.D)
+            && currentLine < 1)
         {
             currentLine++; // +1 до зм≥нноњ
             transform.Translate(Vector3.right * posHorizontalStep);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLine > -1)
+        if (Input.GetKeyDown(KeyCode.LeftArrow)
+            || Input.GetKeyDown(KeyCode.A)
+            && currentLine > -1)
         {
             currentLine--; // -1 до зм≥нноњ
             transform.Translate(Vector3.left * posHorizontalStep);
@@ -29,18 +33,16 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
         }
+        if (transform.position.z > -2.9f || transform.position.z < -3.1f)
+        {
+            SceneManager.LoadScene(1); // 1 - гра, 0 - меню
+        }
     }
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            SceneManager.LoadScene(1); // 1 - √ра, 0 - ћеню
-        }
-    }
+  
     private void OnCollisionStay(Collision collision)
     {
         isGrounded = true;
