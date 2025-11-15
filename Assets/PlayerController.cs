@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        transform.position = new Vector3(0, 1, -3);
     }
   
     private void OnCollisionStay(Collision collision)
