@@ -20,53 +20,44 @@ public class PartController : MonoBehaviour
     {
         if (line_1 == 0)
         {
-
+            SetLineObject(line_1);
+        }
+        if (line_2 == 0)
+        {
+            SetLineObject(line_2);
+        }
+        if (line_3 == 0)
+        {
+            SetLineObject(line_3);
         }
     }
     private void SetLineObject(int line_num)
     {
-        int choose = Random.Range(0, 2); // Рандомне число, визначає вибір
+        int choose = Random.Range(0, 3); // Рандомне число, визначає вибір
+        float direction = 0f;
 
+        switch (line_num)
+        {
+            case 0:
+                direction = -2.25f;
+                break;
+            case 1:
+                direction = 0f;
+                break;
+            case 2:
+                direction = 2.25f;
+                break;
+        }
         switch (choose)
         {
             case 0:
+                direction = -2.25f;
                 break;
             case 1:
-                foreach (GameObject k in listOfCollectables)
-                {
-                    if (k.activeSelf == false) k.SetActive(true);
-                    if (line_1 == 0) k.transform.localPosition = new Vector3(
-                        -2.25f,
-                        k.transform.localPosition.y,
-                        k.transform.localPosition.z);
-                    else if (line_2 == 0) k.transform.localPosition = new Vector3(
-                        0f,
-                        k.transform.localPosition.y,
-                        k.transform.localPosition.z);
-                    else if (line_3 == 0) k.transform.localPosition = new Vector3(
-                        2.25f,
-                        k.transform.localPosition.y,
-                        k.transform.localPosition.z);
-                }
+                direction = 0f;
                 break;
             case 2:
-                foreach (GameObject k in listOfObstacles)
-                {
-                    if (k.activeSelf == false) k.SetActive(true);
-                    if (line_1 == 0) k.transform.localPosition = new Vector3(
-                        -2.25f,
-                        k.transform.localPosition.y,
-                        k.transform.localPosition.z);
-                    else if (line_2 == 0) k.transform.localPosition = new Vector3(
-                        0f,
-                        k.transform.localPosition.y,
-                        k.transform.localPosition.z);
-                    else if (line_3 == 0) k.transform.localPosition = new Vector3(
-                        2.25f,
-                        k.transform.localPosition.y,
-                        k.transform.localPosition.z);
-
-                }
+                direction = 2.25f;
                 break;
         }
     }
