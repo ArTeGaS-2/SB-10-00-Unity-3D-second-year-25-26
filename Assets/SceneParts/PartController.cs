@@ -20,15 +20,15 @@ public class PartController : MonoBehaviour
     {
         if (line_1 == 0)
         {
-            SetLineObject(line_1);
+            SetLineObject(0);
         }
         if (line_2 == 0)
         {
-            SetLineObject(line_2);
+            SetLineObject(1);
         }
         if (line_3 == 0)
         {
-            SetLineObject(line_3);
+            SetLineObject(2);
         }
     }
     private void SetLineObject(int line_num)
@@ -51,14 +51,27 @@ public class PartController : MonoBehaviour
         switch (choose)
         {
             case 0:
-                direction = -2.25f;
                 break;
             case 1:
-                direction = 0f;
+                ChooseObj(listOfCollectables, direction);
                 break;
             case 2:
-                direction = 2.25f;
+                ChooseObj(listOfObstacles, direction);
                 break;
+        }
+    }
+    private void ChooseObj(List<GameObject> objList, float dir)
+    {
+        foreach (GameObject col in objList)
+        {
+            if (col.activeSelf == false)
+            {
+                col.transform.position = new Vector3(
+                    dir,
+                    col.transform.position.y,
+                    col.transform.position.z);
+                col.SetActive(true);
+            }
         }
     }
 }
