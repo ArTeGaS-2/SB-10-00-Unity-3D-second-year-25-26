@@ -525,6 +525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4212999569340193069}
   - component: {fileID: -6645550004158219113}
+  - component: {fileID: 8998109927231966043}
   m_Layer: 0
   m_Name: ObstaclePart_1
   m_TagString: Untagged
@@ -569,6 +570,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+--- !u!114 &8998109927231966043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4348809674286333945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2870112ecafac0e428db9086bbd52d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listOfObstacles:
+  - {fileID: 809903891914857357}
+  - {fileID: 2624304000377484977}
+  - {fileID: 6489177655512234370}
+  listOfCollectables:
+  - {fileID: 5978094768275909033}
+  - {fileID: 438092693542922130}
+  - {fileID: 2902020066313324004}
+  numOfObstacle: 2
+  numOfCollectables: 2
 --- !u!1 &5978094768275909033
 GameObject:
   m_ObjectHideFlags: 0

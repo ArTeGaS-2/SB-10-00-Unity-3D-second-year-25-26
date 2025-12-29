@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a69ddebc39a1b848898cb14948e1cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePartPrefab: {fileID: 4348809674286333945, guid: 708ba6334a147754cbcd45eb84558424,
+  basePartPrefab: {fileID: 4348809674286333945, guid: f95b5aeb333bfe04ab4b1ec322fe9c14,
     type: 3}
   anotherParts:
   - {fileID: 4348809674286333945, guid: f95b5aeb333bfe04ab4b1ec322fe9c14, type: 3}
