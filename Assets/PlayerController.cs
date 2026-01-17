@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private bool isGrounded;
-    public float jumpForce = 6f;
+    public float jumpForce = 6f;   
     private void Update()
     {
         // Якщо (Введення.ОтриматиКлавішу(КодКлавіші.ПраваСтрілка))
