@@ -32,10 +32,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
         }
-        if (transform.position.z > -2.9f || transform.position.z < -3.1f)
-        {
-            SceneManager.LoadScene(1); // 1 - гра, 0 - меню
-        }
     }
     private void Start()
     {

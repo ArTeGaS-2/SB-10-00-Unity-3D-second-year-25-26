@@ -23,8 +23,13 @@ public class CreditsCounter : MonoBehaviour
     {
         if (other.CompareTag("Coin"))
         {
-            collectedCredits++;
-            UpdateText();
+            if (other.gameObject.GetComponent<Coin>().isTaked == false)
+            {
+                collectedCredits++;
+                UpdateText();
+                Destroy(other.gameObject);
+            }
+            other.gameObject.GetComponent<Coin>().isTaked = true;
         }
     }
 }
