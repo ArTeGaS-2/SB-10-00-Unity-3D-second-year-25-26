@@ -71,7 +71,9 @@ public class PartController : MonoBehaviour
                     col.transform.position.y,
                     col.transform.position.z);
                 col.SetActive(true);
+                return;
             }
         }
     }
 }
+
