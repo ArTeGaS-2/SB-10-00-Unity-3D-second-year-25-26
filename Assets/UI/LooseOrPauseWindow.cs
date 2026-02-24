@@ -44,6 +44,6 @@ public class LooseOrPauseWindow : MonoBehaviour
     public void ExitToMenu()
     {
         Time.timeScale = 1f; // Відновлюємо час
-        SceneManager.LoadScene("Menu"); // Завантажуємо сцену меню
+        SceneManager.LoadScene("MenuScene"); // Завантажуємо сцену меню
     }
 }
