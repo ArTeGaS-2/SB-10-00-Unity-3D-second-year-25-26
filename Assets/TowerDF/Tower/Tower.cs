@@ -18,6 +18,10 @@ public class Tower : MonoBehaviour
     {
         enemiesInRadius = new List<GameObject>();
     }
+    private void Start()
+    {
+        StartCoroutine(SpawnProjectile());
+    }
     private void OnTriggerEnter(Collider other)
     {
         
@@ -25,5 +29,16 @@ public class Tower : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         
+    }
+    IEnumerator SpawnProjectile()
+    {
+        while (true)
+        {
+            Instantiate(
+                projectilePrefab,
+                transform.position,
+                Quaternion.identity);
+            yield return new WaitForSeconds(attackInterval);
+        }
     }
 }
