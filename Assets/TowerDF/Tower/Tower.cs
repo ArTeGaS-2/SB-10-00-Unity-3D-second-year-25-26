@@ -6,6 +6,7 @@ public class Tower : MonoBehaviour
 {
     [Header("Об'єкти")]
     [SerializeField] GameObject projectilePrefab;
+    [SerializeField] GameObject spawnPoint; 
 
     [Header("Параметри вежі")]
     [SerializeField] float attackInterval = 1f;
@@ -36,7 +37,7 @@ public class Tower : MonoBehaviour
         {
             Instantiate(
                 projectilePrefab,
-                transform.position,
+                spawnPoint.transform.position,
                 Quaternion.identity);
             yield return new WaitForSeconds(attackInterval);
         }

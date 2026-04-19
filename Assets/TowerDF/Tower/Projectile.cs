@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [HideInInspector] public GameObject targetObj; // До кого летить куля
+    public GameObject targetObj; // До кого летить куля
     [SerializeField] private float projectileSpeed = 10.0f; // Швидкість кулі
 
     public void SetTargetObject(GameObject target) { targetObj = target; }
