@@ -19,4 +19,15 @@ public class EnemyAgent : MonoBehaviour
         agent.SetDestination(GameObject.Find(
             targetName).transform.position);
     }
+    public void TakeDamage(float damage)
+    {
+        if (currentHealth > damage && currentHealth > 0)
+        {
+            currentHealth -= damage;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 }

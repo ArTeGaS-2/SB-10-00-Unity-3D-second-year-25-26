@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public GameObject targetObj; // До кого летить куля
     [SerializeField] private float projectileSpeed = 10.0f; // Швидкість кулі
-
+    
     public void SetTargetObject(GameObject target) { targetObj = target; }
 
     private void FixedUpdate()
@@ -18,5 +18,10 @@ public class Projectile : MonoBehaviour
             projectileSpeed * Time.fixedDeltaTime); // з якою швидкістю
 
         transform.LookAt(targetObj.transform.position); // дивимось на ціль
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        collision.gameObject.GetComponent<EnemyAgent>().TakeDamage(200);
+        Destroy(gameObject);
     }
 }
