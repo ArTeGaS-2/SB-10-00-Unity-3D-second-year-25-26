@@ -6,10 +6,12 @@ using UnityEngine.AI;
 public class EnemyAgent : MonoBehaviour
 {
     [SerializeField] string targetName = "EnemyTarget";
-    [SerializeField] float maxHealth = 20f;
+    public float maxHealth = 20f;
     
     private NavMeshAgent agent;
-    private float currentHealth;
+    public float currentHealth;
+
+    private EnemyHpBar hpBar;
 
     private void Start()
     {
@@ -18,6 +20,8 @@ public class EnemyAgent : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(GameObject.Find(
             targetName).transform.position);
+
+        hpBar = GetComponentInChildren<EnemyHpBar>();
     }
     public void TakeDamage(float damage)
     {
@@ -25,7 +29,7 @@ public class EnemyAgent : MonoBehaviour
         {
             currentHealth -= damage;
         }
-        else
+        else 
         {
             Destroy(gameObject);
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
-{
+{ 
     [Header("Об'єкти")]
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] GameObject spawnPoint; 
