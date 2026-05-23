@@ -386,6 +386,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 4041967430492318003, guid: 03bd0c602fa16ef46a3d56587bc3c7c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7931890844643081098, guid: 03bd0c602fa16ef46a3d56587bc3c7c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -595,6 +600,8 @@ MonoBehaviour:
   zoomSpeed: 1000
   minZoomDistance: 45
   maxZoomDistance: 75
+  horizontalLimit: 50
+  verticalLimit: 50
 --- !u!1 &1152224189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1241,11 @@ PrefabInstance:
     - target: {fileID: 638505928144845178, guid: f844201494a436a4d8936eeb99c328bf,
         type: 3}
       propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 638505928144845178, guid: f844201494a436a4d8936eeb99c328bf,
+        type: 3}
+      propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1097995086154048138, guid: f844201494a436a4d8936eeb99c328bf,

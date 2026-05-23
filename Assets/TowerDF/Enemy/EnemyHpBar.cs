@@ -14,7 +14,7 @@ public class EnemyHpBar : MonoBehaviour
 
         hpBar.maxValue = enemy.maxHealth;
         enemy.currentHealth = enemy.maxHealth;
-    } 
+    }
     private void FixedUpdate()
     { 
         transform.LookAt(Camera.main.transform.position);
