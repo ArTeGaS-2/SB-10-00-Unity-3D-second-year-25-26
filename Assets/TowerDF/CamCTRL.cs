@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CamCTRL : MonoBehaviour
-{
+{ 
     [Header("Швидкість")]
     [SerializeField] float moveSpeed = 10f; // швидкість руху
     [SerializeField] float zoomSpeed = 1f; // швидкість зуму

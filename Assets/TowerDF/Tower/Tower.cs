@@ -79,5 +79,5 @@ public class Tower : MonoBehaviour
             
             yield return new WaitForSeconds(attackInterval);
         }
-    }
+    } 
 }
