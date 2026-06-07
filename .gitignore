@@ -101,3 +101,8 @@ InitTestScene*.unity*
 # Local helper files
 *.slnx
 verify-repo.ps1
+
+# OS archive noise
+.DS_Store
+__MACOSX/
+__MACOSX.meta
